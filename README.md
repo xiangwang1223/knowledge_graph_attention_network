@@ -1,7 +1,7 @@
 # Knowledge Graph Attention Network
 This is our Tensorflow implementation for the paper:
 
->Xiang Wang, Xiangnan He, Yixin Cao, Meng Liu and Tat-Seng Chua (2019). [End-to-end Modeling of High-order Relations in Knowledge Graph for Recommendation](xx). In KDD'19, Anchorage, Alaska, USA, August 4-8, 2019.
+>Xiang Wang, Xiangnan He, Yixin Cao, Meng Liu and Tat-Seng Chua (2019). [KGAT: Knowledge Graph Attention Network for Recommendation](xx). In KDD'19, Anchorage, Alaska, USA, August 4-8, 2019.
 
 Author: Dr. Xiang Wang (xiangwang at u.nus.edu)
 
