@@ -17,7 +17,7 @@ If you want to use our codes in your research, please cite:
                Yixin Cao and
                Meng Liu and
                Tat-Seng Chua},
-  title     = {End-to-end Modeling of High-order Relations in Knowledge Graph for Recommendation},
+  title     = {KGAT: Knowledge Graph Attention Network for Recommendation},
   booktitle = {{KDD}},
   year      = {2019}
 }
