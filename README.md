@@ -58,3 +58,17 @@ Some important arguments:
     * `cke`, proposed in [Collaborative Knowledge Base Embedding for Recommender Systems](https://dl.acm.org/citation.cfm?id=2939673), KDD2016. Usage: `--model_type cke`.
     * `cfkg`, proposed in [Learning Heterogeneous Knowledge Base Embeddings for Explainable Recommendation](https://arxiv.org/abs/1805.03352), Algorithm2018. Usage: `--model_type cfkg`.
   * You can find other baselines, such as RippleNet, MCRec, and GC-MC, in Github.
+
+* `alg_type`
+  * It specifies the type of graph convolutional layer.
+  * Here we provide three options:
+    * `kgat` (by default), proposed in [KGAT: Knowledge Graph Attention Network for Recommendation](xx), KDD2019. Usage: `--alg_type kgat`.
+    * `gcn`, proposed in [Semi-Supervised Classification with Graph Convolutional Networks](https://openreview.net/pdf?id=SJU4ayYgl), ICLR2018. Usage: `--alg_type gcn`.
+    * `graphsage`, propsed in [Inductive Representation Learning on Large Graphs.](https://papers.nips.cc/paper/6703-inductive-representation-learning-on-large-graphs.pdf), NeurIPS2017. Usage: `--alg_type graphsage`.
+    
+
+* `adj_type`
+  * It specifies the type of laplacian matrix where each entry defines the decay factor between two connected nodes.
+  * Here we provide two options:
+    * `si` (by default), where each decay factor between two connected nodes (e.g., x->y) is set as 1/(out degree of x), while each node is also assigned with 1 for self-connections. Usage: `--adj_type si`.
+    * `bi`, where each decay factor between two connected nodes (e.g., x->y) is set as 1/sqrt((out degree of x)*(out degree of y)). Usage: `--adj_type bi`.
