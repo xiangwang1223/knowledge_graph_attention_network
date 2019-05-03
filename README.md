@@ -9,7 +9,7 @@ Author: Dr. Xiang Wang (xiangwang at u.nus.edu)
 Knowledge Graph Attention Network (KGAT) is a new recommendation framework tailored to knowledge-aware personalized recommendation. Built upon the graph neural network framework, KGAT explicitly models the high-order relations in collaborative knowledge graph to provide better recommendation with item side information.
 
 ## Citation 
-If you want to use our codes in your research, please cite:
+If you want to use our codes and datasets in your research, please cite:
 ```
 @inproceedings{KGAT19,
   author    = {Xiang Wang and
