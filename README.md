@@ -70,5 +70,35 @@ Some important arguments:
 * `adj_type`
   * It specifies the type of laplacian matrix where each entry defines the decay factor between two connected nodes.
   * Here we provide two options:
-    * `si` (by default), where each decay factor between two connected nodes (e.g., x->y) is set as 1/(out degree of x), while each node is also assigned with 1 for self-connections. Usage: `--adj_type si`.
-    * `bi`, where each decay factor between two connected nodes (e.g., x->y) is set as 1/sqrt((out degree of x)*(out degree of y)). Usage: `--adj_type bi`.
+    * `si` (by default), where each decay factor between two connected nodes (say, x->y) is set as 1/(out degree of x), while each node is also assigned with 1 for self-connections. Usage: `--adj_type si`.
+    * `bi`, where each decay factor between two connected nodes (say, x->y) is set as 1/sqrt((out degree of x)*(out degree of y)). Usage: `--adj_type bi`.
+    
+* `mess_dropout`
+  * It indicates the message dropout ratio, which randomly drops out the outgoing messages. Usage `--mess_dropout [0.1,0.1,0.1]`.
+
+## Dataset
+We provide three processed datasets: Amazon-book, Last-FM, and Yelp2018.
+* `train.txt`
+  * Train file.
+  * Each line is a user with her/his positive interactions with items: (`userID` and `a list of itemID`).
+  
+* `test.txt`
+  * Test file (positive instances).
+  * Each line is a user with her/his positive interactions with items: (`userID` and `a list of itemID`).
+  * Note that here we treat all unobserved interactions as the negative instances when reporting performance.
+  
+* `user_list.txt`
+  * User file.
+  * Each line is a triplet (`org_id`, `remap_id`) for one user, where `org_id` and `remap_id` represent the ID of such user in the original and our datasets, respectively.
+  
+* `item_list.txt`
+  * Item file.
+  * Each line is a triplet (`org_id`, `remap_id`, `freebase_id`) for one item, where `org_id`, `remap_id`, and `freebase_id` represent the ID of such item in the original, our datasets, and freebase, respectively.
+  
+* `entity_list.txt`
+  * Entity file.
+  * Each line is a triplet (`freebase_id`, `remap_id`) for one entity in knowledge graph, where `freebase_id` and `remap_id` represent the ID of such entity in freebase and our datasets, respectively.
+  
+* `relation_list.txt`
+  * Relation file.
+  * Each line is a triplet (`freebase_id`, `remap_id`) for one relation in knowledge graph, where `freebase_id` and `remap_id` represent the ID of such relation in freebase and our datasets, respectively.
