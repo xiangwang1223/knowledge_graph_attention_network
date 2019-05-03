@@ -1,0 +1,10 @@
+org_id remap_id
+http://rdf.freebase.com/ns/common.topic.notable_types 0
+http://rdf.freebase.com/ns/music.recording.releases 1
+http://rdf.freebase.com/ns/music.recording.artist 2
+http://rdf.freebase.com/ns/music.recording.engineer 3
+http://rdf.freebase.com/ns/music.recording.producer 4
+http://rdf.freebase.com/ns/music.recording.canonical_version 5
+http://rdf.freebase.com/ns/music.recording.song 6
+http://rdf.freebase.com/ns/music.single.versions 7
+http://rdf.freebase.com/ns/music.recording.featured_artists 8
