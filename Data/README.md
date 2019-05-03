@@ -25,3 +25,23 @@ We provide three processed datasets: Amazon-book, Last-FM, and Yelp2018.
   * Relation file.
   * Each line is a triplet (`freebase_id`, `remap_id`) for one relation in knowledge graph, where `freebase_id` and `remap_id` represent the ID of such relation in freebase and our datasets, respectively.
 
+## Acknowledgement
+Any scientific publications that use our datasets should cite the following paper as the reference:
+```
+@inproceedings{KGAT19,
+  author    = {Xiang Wang and
+               Xiangnan He and
+               Yixin Cao and
+               Meng Liu and
+               Tat-Seng Chua},
+  title     = {KGAT: Knowledge Graph Attention Network for Recommendation},
+  booktitle = {{KDD}},
+  year      = {2019}
+}
+```
+
+Nobody guarantees the correctness of the data, its suitability for any particular purpose, or the validity of results based on the use of the data set. The data set may be used for any research purposes under the following conditions:
+* The user must acknowledge the use of the data set in publications resulting from the use of the data set.
+* The user may not redistribute the data without separate permission.
+* The user may not try to deanonymise the data.
+* The user may not use this information for any commercial or revenue-bearing purposes without first obtaining permission from us.
