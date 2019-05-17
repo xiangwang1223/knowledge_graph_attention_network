@@ -78,6 +78,17 @@ Some important arguments:
 
 ## Dataset
 We provide three processed datasets: Amazon-book, Last-FM, and Yelp2018.
+
+| | | Amazon-book | Last-FM | Yelp2018 |
+|:---:|:---|---:|---:|---:|
+|User-Item Interaction| #Users | 70,679 | 23,566 | 45,919|
+| | #Items | 24,915 | 48,123 | 45,538|
+| | #Interactions | 847,733 | 3,034,796 | 1,185,068|
+|Knowledge Graph | #Entities | 88,572 | 58,266 | 90,961|
+| | #Relations | 39 | 9 | 42 |
+| | #Triplets | 2,557,746 | 464,567 | 1,853,704|
+
+
 * `train.txt`
   * Train file.
   * Each line is a user with her/his positive interactions with items: (`userID` and `a list of itemID`).
