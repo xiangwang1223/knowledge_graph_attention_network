@@ -1,7 +1,7 @@
 # Knowledge Graph Attention Network
 This is our Tensorflow implementation for the paper:
 
->Xiang Wang, Xiangnan He, Yixin Cao, Meng Liu and Tat-Seng Chua (2019). [KGAT: Knowledge Graph Attention Network for Recommendation](https://xiangwang1223.github.io/papers/KGAT_final.pdf). In KDD'19, Anchorage, Alaska, USA, August 4-8, 2019.
+>Xiang Wang, Xiangnan He, Yixin Cao, Meng Liu and Tat-Seng Chua (2019). [KGAT: Knowledge Graph Attention Network for Recommendation](https://arxiv.org/abs/1905.07854). In KDD'19, Anchorage, Alaska, USA, August 4-8, 2019.
 
 Author: Dr. Xiang Wang (xiangwang at u.nus.edu)
 
