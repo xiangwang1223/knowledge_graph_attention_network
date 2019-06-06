@@ -33,7 +33,7 @@ The code has been tested running under Python 3.6.5. The required packages are a
 The instruction of commands has been clearly stated in the codes (see the parser function in Model/utility/parser.py).
 * Yelp2018 dataset
 ```
-python Main.py --model_type kgat --alg_type bi --dataset gowalla --regs [1e-5,1e-5] --layer_size [64,32,16] --embed_size 64 --lr 0.0001 --epoch 400 --verbose 1 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
+python Main.py --model_type kgat --alg_type bi --dataset yelp2018 --regs [1e-5,1e-5] --layer_size [64,32,16] --embed_size 64 --lr 0.0001 --epoch 400 --verbose 1 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
 ```
 
 * Amazon-book dataset
