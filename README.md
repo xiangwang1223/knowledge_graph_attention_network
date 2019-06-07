@@ -77,7 +77,7 @@ Some important arguments:
   * It indicates the message dropout ratio, which randomly drops out the outgoing messages. Usage `--mess_dropout [0.1,0.1,0.1]`.
 
 ## Dataset
-We provide three processed datasets: Amazon-book, Last-FM, and Yelp2018.
+We provide three processed datasets: Amazon-book, Last-FM, and Yelp2018. You can find the full version of recommendation datasets via [Amazon-book](http://jmcauley.ucsd.edu/data/amazon), [Last-FM](https://grouplens.org/datasets/hetrec-2011/), and [Yelp2018](https://www.yelp.com/dataset/challenge). Moreover, if you want to get more links between the recommendation datasets (i.e., Amazon-book and Last-FM) and knowledge graph (i.e., Google Freebase), please visit [KB4Rec](https://github.com/RUCDM/KB4Rec).
 
 | | | Amazon-book | Last-FM | Yelp2018 |
 |:---:|:---|---:|---:|---:|
