@@ -51,7 +51,7 @@ Some important arguments:
 * `model_type`
   * It specifies the type of model.
   * Here we provide six options, including KGAT and five baseline models:
-    * `kgat` (by default), proposed in [KGAT: Knowledge Graph Attention Network for Recommendation](xx), KDD2019. Usage: `--model_type kgat`.
+    * `kgat` (by default), proposed in [KGAT: Knowledge Graph Attention Network for Recommendation](https://arxiv.org/abs/1905.07854), KDD2019. Usage: `--model_type kgat`.
     * `bprmf`, proposed in [BPR: Bayesian Personalized Ranking from Implicit Feedback](https://dl.acm.org/citation.cfm?id=1795167), UAI2009. Such model only uses user-item interactions. Usage: `--model_type bprmf`.
     * `fm`, proposed in [Fast context-aware recommendations with factorization machines](https://dl.acm.org/citation.cfm?id=2010002), SIGIR2011. Usage: `--model_type fm`.
     * `nfm`, proposed in [Neural Factorization Machines for Sparse Predictive Analytics](https://dl.acm.org/citation.cfm?id=3080777), SIGIR2017. Usage: `--model_type nfm`.
@@ -77,7 +77,9 @@ Some important arguments:
   * It indicates the message dropout ratio, which randomly drops out the outgoing messages. Usage `--mess_dropout [0.1,0.1,0.1]`.
 
 ## Dataset
-We provide three processed datasets: Amazon-book, Last-FM, and Yelp2018. You can find the full version of recommendation datasets via [Amazon-book](http://jmcauley.ucsd.edu/data/amazon), [Last-FM](https://grouplens.org/datasets/hetrec-2011/), and [Yelp2018](https://www.yelp.com/dataset/challenge). Moreover, if you want to get more links between the recommendation datasets (i.e., Amazon-book and Last-FM) and knowledge graph (i.e., Google Freebase), please visit [KB4Rec](https://github.com/RUCDM/KB4Rec).
+We provide three processed datasets: Amazon-book, Last-FM, and Yelp2018.
+* You can find the full version of recommendation datasets via [Amazon-book](http://jmcauley.ucsd.edu/data/amazon), [Last-FM](https://grouplens.org/datasets/hetrec-2011/), and [Yelp2018](https://www.yelp.com/dataset/challenge).
+* We follow [KB4Rec](https://github.com/RUCDM/KB4Rec) to preprocess Amazon-book and Last-FM datasets, mapping items into Freebase entities via title matching if there is a mapping available.
 
 | | | Amazon-book | Last-FM | Yelp2018 |
 |:---:|:---|---:|---:|---:|
