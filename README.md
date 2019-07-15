@@ -78,7 +78,7 @@ Some important arguments:
 
 ## Dataset
 We provide three processed datasets: Amazon-book, Last-FM, and Yelp2018.
-* You can find the full version of recommendation datasets via [Amazon-book](http://jmcauley.ucsd.edu/data/amazon), [Last-FM](https://grouplens.org/datasets/hetrec-2011/), and [Yelp2018](https://www.yelp.com/dataset/challenge).
+* You can find the full version of recommendation datasets via [Amazon-book](http://jmcauley.ucsd.edu/data/amazon), [Last-FM](http://www.cp.jku.at/datasets/LFM-1b/), and [Yelp2018](https://www.yelp.com/dataset/challenge).
 * We follow [KB4Rec](https://github.com/RUCDM/KB4Rec) to preprocess Amazon-book and Last-FM datasets, mapping items into Freebase entities via title matching if there is a mapping available.
 
 | | | Amazon-book | Last-FM | Yelp2018 |
