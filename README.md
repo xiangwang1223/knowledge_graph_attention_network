@@ -16,9 +16,10 @@ If you want to use our codes and datasets in your research, please cite:
                Xiangnan He and
                Yixin Cao and
                Meng Liu and
-               Tat-Seng Chua},
-  title     = {KGAT: Knowledge Graph Attention Network for Recommendation},
+               Tat{-}Seng Chua},
+  title     = {{KGAT:} Knowledge Graph Attention Network for Recommendation},
   booktitle = {{KDD}},
+  pages     = {950--958},
   year      = {2019}
 }
 ```
