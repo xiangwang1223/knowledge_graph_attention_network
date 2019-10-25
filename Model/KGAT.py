@@ -262,7 +262,7 @@ class KGAT(object):
             side_embeddings = tf.concat(temp_embed, 0)
             # transformed sum messages of neighbors.
             sum_embeddings = tf.nn.leaky_relu(
-                tf.matmul(side_embeddings, self.weights['W_gc_%d' % k]) + self.weights['b_gc_%d' % k])
+                tf.matmul(ego_embeddings + side_embeddings, self.weights['W_gc_%d' % k]) + self.weights['b_gc_%d' % k])
 
             # bi messages of neighbors.
             bi_embeddings = tf.multiply(ego_embeddings, side_embeddings)
@@ -271,7 +271,7 @@ class KGAT(object):
                 tf.matmul(bi_embeddings, self.weights['W_bi_%d' % k]) + self.weights['b_bi_%d' % k])
 
             # non-linear activation.
-            ego_embeddings = bi_embeddings
+            ego_embeddings = bi_embeddings + side_embeddings
 
             # message dropout.
             ego_embeddings = tf.nn.dropout(ego_embeddings, 1 - self.mess_dropout[k])
