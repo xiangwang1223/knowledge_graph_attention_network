@@ -197,11 +197,12 @@ class KGAT(object):
         h_e = tf.reshape(tf.matmul(h_e, trans_M), [-1, self.kge_dim])
         pos_t_e = tf.reshape(tf.matmul(pos_t_e, trans_M), [-1, self.kge_dim])
         neg_t_e = tf.reshape(tf.matmul(neg_t_e, trans_M), [-1, self.kge_dim])
-
-        h_e = tf.math.l2_normalize(h_e, axis=1)
-        r_e = tf.math.l2_normalize(r_e, axis=1)
-        pos_t_e = tf.math.l2_normalize(pos_t_e, axis=1)
-        neg_t_e = tf.math.l2_normalize(neg_t_e, axis=1)
+        
+        # Remove the l2 normalization terms
+        # h_e = tf.math.l2_normalize(h_e, axis=1)
+        # r_e = tf.math.l2_normalize(r_e, axis=1)
+        # pos_t_e = tf.math.l2_normalize(pos_t_e, axis=1)
+        # neg_t_e = tf.math.l2_normalize(neg_t_e, axis=1)
 
         return h_e, r_e, pos_t_e, neg_t_e
 
@@ -391,10 +392,10 @@ class KGAT(object):
         h_e = tf.reshape(tf.matmul(h_e, trans_M), [-1, self.kge_dim])
         t_e = tf.reshape(tf.matmul(t_e, trans_M), [-1, self.kge_dim])
 
-        # l2-normalize
-        h_e = tf.math.l2_normalize(h_e, axis=1)
-        r_e = tf.math.l2_normalize(r_e, axis=1)
-        t_e = tf.math.l2_normalize(t_e, axis=1)
+        ## l2-normalize
+        # h_e = tf.math.l2_normalize(h_e, axis=1)
+        # r_e = tf.math.l2_normalize(r_e, axis=1)
+        # t_e = tf.math.l2_normalize(t_e, axis=1)
 
         kg_score = tf.reduce_sum(tf.multiply(t_e, tf.tanh(h_e + r_e)), 1)
 
