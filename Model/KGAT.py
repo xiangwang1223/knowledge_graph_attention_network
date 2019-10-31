@@ -213,8 +213,10 @@ class KGAT(object):
         regularizer = tf.nn.l2_loss(self.u_e) + tf.nn.l2_loss(self.pos_i_e) + tf.nn.l2_loss(self.neg_i_e)
         regularizer = regularizer / self.batch_size
 
-        maxi = tf.log(tf.nn.sigmoid(pos_scores - neg_scores))
-        base_loss = tf.negative(tf.reduce_mean(maxi))
+        # Using the softplus as BPR loss to avoid the nan error.
+        base_loss = tf.reduce_mean(tf.nn.softplus(-(pos_scores - neg_scores)))
+        # maxi = tf.log(tf.nn.sigmoid(pos_scores - neg_scores))
+        # base_loss = tf.negative(tf.reduce_mean(maxi))
 
         self.base_loss = base_loss
         self.kge_loss = tf.constant(0.0, tf.float32, [1])
@@ -231,12 +233,16 @@ class KGAT(object):
 
         pos_kg_score = _get_kg_score(self.h_e, self.r_e, self.pos_t_e)
         neg_kg_score = _get_kg_score(self.h_e, self.r_e, self.neg_t_e)
+        
+        # Using the softplus as BPR loss to avoid the nan error.
+        kg_loss = tf.reduce_mean(tf.nn.softplus(-(neg_kg_score - pos_kg_score)))
+        # maxi = tf.log(tf.nn.sigmoid(neg_kg_score - pos_kg_score))
+        # kg_loss = tf.negative(tf.reduce_mean(maxi))
 
-        maxi = tf.log(tf.nn.sigmoid(neg_kg_score - pos_kg_score))
-        kg_loss = tf.negative(tf.reduce_mean(maxi))
+
         kg_reg_loss = tf.nn.l2_loss(self.h_e) + tf.nn.l2_loss(self.r_e) + \
                       tf.nn.l2_loss(self.pos_t_e) + tf.nn.l2_loss(self.neg_t_e)
-        kg_reg_loss = kg_reg_loss / self.batch_size
+        kg_reg_loss = kg_reg_loss / self.batch_size_kg
 
         self.kge_loss2 = kg_loss
         self.reg_loss2 = self.regs[1] * kg_reg_loss
@@ -392,7 +398,7 @@ class KGAT(object):
         h_e = tf.reshape(tf.matmul(h_e, trans_M), [-1, self.kge_dim])
         t_e = tf.reshape(tf.matmul(t_e, trans_M), [-1, self.kge_dim])
 
-        ## l2-normalize
+        # l2-normalize
         # h_e = tf.math.l2_normalize(h_e, axis=1)
         # r_e = tf.math.l2_normalize(r_e, axis=1)
         # t_e = tf.math.l2_normalize(t_e, axis=1)
