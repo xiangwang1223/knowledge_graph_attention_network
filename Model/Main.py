@@ -319,9 +319,10 @@ if __name__ == '__main__':
                         ret['precision'][0], ret['precision'][-1], ret['hit_ratio'][0], ret['hit_ratio'][-1],
                         ret['ndcg'][0], ret['ndcg'][-1])
             print(perf_str)
-
+        
+        # change flag_step from 5 to 10, ensuring the better performance.
         cur_best_pre_0, stopping_step, should_stop = early_stopping(ret['recall'][0], cur_best_pre_0,
-                                                                    stopping_step, expected_order='acc', flag_step=5)
+                                                                    stopping_step, expected_order='acc', flag_step=10)
 
         # *********************************************************
         # early stopping when cur_best_pre_0 is decreasing for ten successive steps.
