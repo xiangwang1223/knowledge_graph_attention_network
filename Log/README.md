@@ -13,6 +13,14 @@ where:
 * `train==[30.47060=16.64901 + 13.32211 + 0.49948]` records the loss of BPR loss for recommendation, BPR loss for knowledge graph embedding, and L2 regularization terms for both previous phases;
 * `recall=[0.06590, 0.19621]` illustrates the `recall@20` and `recall@100` scores; analogously for precision, hit, and ndcg scores.
 
+The final perfroamnce is shown as:
+```
+Best Iter=[95]@[166677.6]	recall=[0.08820	0.12068	0.14174	0.15773	0.17082], precision=[0.03521	0.02661	0.02217	0.01939	0.01741], hit=[0.36111	0.46397	0.52597	0.56730	0.59930], ndcg=[0.13660	0.16881	0.19020	0.20689	0.22085]
+```
+where:
+* `Best Iter=[95]@[166677.6]` shows that the best performance appears at the `95*10` epoch (since we show the training log every 10 epochs);
+* `recall=[0.08820	0.12068	0.14174	0.15773	0.17082]` displays the final performance w.r.t. `recall@k`, where `k` spans from `20`, `40`, `60`, `80` to `100`.
+
 ## Some Points
 Here I would like to clarify some points:
 * The training and testing time costs might be different based on the running machines.
