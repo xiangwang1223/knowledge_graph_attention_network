@@ -30,22 +30,24 @@ The code has been tested running under Python 3.6.5. The required packages are a
 * scipy == 1.1.0
 * sklearn == 0.20.0
 
-## Example to Run the Codes
-The instruction of commands has been clearly stated in the codes (see the parser function in Model/utility/parser.py).
+## Reproducibility & Example to Run the Codes
+To demonstrate the reproducibility of the best performance reported in our paper and faciliate researchers to track whether the model status is consistent with ours, we provide the best parameter settings (might be different for the custormized datasets) in the scripts, and provide [the log for our trainings](https://github.com/xiangwang1223/knowledge_graph_attention_network/tree/master/Log).
+
+The instruction of commands has been clearly stated in the codes (see the parser function in Model/utility/parser.py). 
 * Yelp2018 dataset
 ```
-python Main.py --model_type kgat --alg_type bi --dataset yelp2018 --regs [1e-5,1e-5] --layer_size [64,32,16] --embed_size 64 --lr 0.0001 --epoch 400 --verbose 1 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
+python Main.py --model_type kgat --alg_type bi --dataset yelp2018 --regs [1e-5,1e-5] --layer_size [64,32,16] --embed_size 64 --lr 0.0001 --epoch 1000 --verbose 50 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
 ```
 
 * Amazon-book dataset
 ```
-python Main.py --model_type kgat --alg_type bi --dataset amazon-book --regs [1e-5,1e-5] --layer_size [64,32,16] --embed_size 64 --lr 0.0001 --epoch 400 --verbose 1 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
+python Main.py --model_type kgat --alg_type bi --dataset amazon-book --regs [1e-5,1e-5] --layer_size [64,32,16] --embed_size 64 --lr 0.0001 --epoch 1000 --verbose 50 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
 ```
 
 
 * Last-fm dataset
 ```
-python Main.py --model_type kgat --alg_type bi --dataset last-fm --regs [1e-5,1e-5] --layer_size [64,32,16] --embed_size 64 --lr 0.0001 --epoch 400 --verbose 1 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
+python Main.py --model_type kgat --alg_type bi --dataset last-fm --regs [1e-5,1e-5] --layer_size [64,32,16] --embed_size 64 --lr 0.0001 --epoch 1000 --verbose 50 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
 ```
 
 Some important arguments:
@@ -76,6 +78,10 @@ Some important arguments:
     
 * `mess_dropout`
   * It indicates the message dropout ratio, which randomly drops out the outgoing messages. Usage `--mess_dropout [0.1,0.1,0.1]`.
+  
+* `pretrain`
+  * Please note that, as million-scale knowledge graph entities are involved in the recommendation task, it is strongly suggested to use the trained user and item embeddings of BPR-MF to initialize the user and item embeddings of all models (including all baselines and our KGAT) by setting the hyperparameter `pretrain` as `-1`.
+  * If you would like to train all models from scratch, please set the hyperparameter `pretrain` as `0`. In this case, please set the number of epoch and the criteria of early stopping larger.
 
 ## Dataset
 We provide three processed datasets: Amazon-book, Last-FM, and Yelp2018.
