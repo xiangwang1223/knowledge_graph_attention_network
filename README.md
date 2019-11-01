@@ -80,7 +80,7 @@ Some important arguments:
   * It indicates the message dropout ratio, which randomly drops out the outgoing messages. Usage `--mess_dropout [0.1,0.1,0.1]`.
   
 * `pretrain`
-  * Please note that, as million-scale knowledge graph entities are involved in the recommendation task, it is strongly suggested to use the trained user and item embeddings of BPR-MF to initialize the user and item embeddings of all models (including all baselines and our KGAT) by setting the hyperparameter `pretrain` as `-1`.
+  * Please note that, as million-scale knowledge graphs are involved in the recommendation task, it is strongly suggested to use the trained user and item embeddings of BPR-MF to initialize the user and item embeddings of all models (including all baselines and our KGAT) by setting the hyperparameter `pretrain` as `-1`.
   * If you would like to train all models from scratch, please set the hyperparameter `pretrain` as `0`. In this case, please set the number of epoch and the criteria of early stopping larger.
 
 ## Dataset
