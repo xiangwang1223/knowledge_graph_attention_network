@@ -143,3 +143,7 @@ Nobody guarantees the correctness of the data, its suitability for any particula
 * The user may not redistribute the data without separate permission.
 * The user may not try to deanonymise the data.
 * The user may not use this information for any commercial or revenue-bearing purposes without first obtaining permission from us.
+
+## Funding Source Acknowledgement
+
+This research is supported by the National Research Foundation, Singapore under its International Research Centres in Singapore Funding Initiative. Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not reflect the views of National Research Foundation, Singapore.
