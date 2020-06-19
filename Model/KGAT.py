@@ -158,7 +158,7 @@ class KGAT(object):
         return all_weights
 
     def _build_model_phase_I(self):
-        if self.alg_type in ['bi']:
+        if self.alg_type in ['bi', 'kgat']:
             self.ua_embeddings, self.ea_embeddings = self._create_bi_interaction_embed()
 
         elif self.alg_type in ['gcn']:
@@ -166,6 +166,9 @@ class KGAT(object):
 
         elif self.alg_type in ['graphsage']:
             self.ua_embeddings, self.ea_embeddings = self._create_graphsage_embed()
+        else:
+            print('please check the the alg_type argument, which should be bi, kgat, gcn, or graphsage.')
+            raise NotImplementedError
 
         self.u_e = tf.nn.embedding_lookup(self.ua_embeddings, self.users)
         self.pos_i_e = tf.nn.embedding_lookup(self.ea_embeddings, self.pos_items)
