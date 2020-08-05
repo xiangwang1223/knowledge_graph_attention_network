@@ -74,5 +74,8 @@ def parse_args():
                         help='whether using attention mechanism')
     parser.add_argument('--use_kge', type=bool, default=True,
                         help='whether using knowledge graph embedding')
+    
+    parser.add_argument('--l1_flag', type=bool, default=True,
+                        help='Flase: using the L2 norm, True: using the L1 norm.')
 
     return parser.parse_args()
