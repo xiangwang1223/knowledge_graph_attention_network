@@ -1,0 +1,1 @@
+All logs will be saved to trained_model/KGAT/amazon-book/embed-dim32_relation-dim64_random-walk_bi-interaction_64-32-16_lr0.0001_pretrain0/log1.log

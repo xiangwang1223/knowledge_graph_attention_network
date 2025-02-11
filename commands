@@ -1,0 +1,3 @@
+python main_kgat.py --data_name amazon-book --embed_dim 32 --kg_print_every 100 --cf_print_every 100 --n_epoch 50 --use_pretrain 0 > am_book.txt &&
+python main_kgat.py --data_name last-fm --embed_dim 32 --kg_print_every 100 --cf_print_every 100 --n_epoch 50 --use_pretrain 0 > last_fm.txt &&
+python main_kgat.py --data_name yelp2018 --embed_dim 32 --kg_print_every 100 --cf_print_every 100 --n_epoch 50 --use_pretrain 0

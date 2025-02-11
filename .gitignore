@@ -1,0 +1,12 @@
+.idea/*
+datasets/.DS_Store
+.DS_Store
+datasets/yelp2018/kg_final.txt
+datasets/amazon-book/kg_final.txt
+*.npy
+datasets/yelp2018/_rel_entity_freq
+datasets/yelp2018/_rel_ecount
+*.pyc
+__pycache__
+trained_model/
+

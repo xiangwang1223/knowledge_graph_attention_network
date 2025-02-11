@@ -1,0 +1,4 @@
+yelp results:
+2025-01-22 07:18:04,708 - root - INFO - CF Evaluation: Epoch 0050 | Total Time 43.1s | Precision [0.0088, 0.0063], Recall [0.0348, 0.1219], NDCG [0.0217, 0.0464]
+2025-01-22 07:18:04,818 - root - INFO - Save model on epoch 0050!
+2025-01-22 07:18:04,966 - root - INFO - Best CF Evaluation: Epoch 0050 | Precision [0.0088, 0.0063], Recall [0.0348, 0.1219], NDCG [0.0217, 0.0464]
